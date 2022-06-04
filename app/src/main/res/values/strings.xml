@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">Ten Twenty Assignment</string>
+
+
+    <!--Watch-->
+    <string name="upcoming_movies_fragment_title">Watch</string>
+    <string name="watch_bottom_nav_title">Watch</string>
+
+
+    <!--Dashboard-->
+    <string name="dashboard_fragment_title">Dashboard</string>
+    <string name="dashboard_bottom_nav_title">Dashboard</string>
+
+
+    <!--Media Library -->
+    <string name="media_library_fragment_title">Media Library</string>
+    <string name="media_library_bottom_nav_title">Media Library</string>
+
+
+    <!--More-->
+    <string name="more_fragment_title">More</string>
+    <string name="more_bottom_nav_title">More</string>
+
+
+    <!--Search-->
+    <string name="nav_menu_search_title">Search</string>
+
 </resources>

@@ -1,7 +1,7 @@
 package com.tentwenty.assignment.movies_list.domain.use_case
 
 import com.tentwenty.assignment.movies_list.common.Resource
-import com.tentwenty.assignment.movies_list.data.model.updoming_movie.toDomainUpComingMovie
+import com.tentwenty.assignment.movies_list.data.model.upcoming_movie.toDomainUpComingMovie
 import com.tentwenty.assignment.movies_list.domain.model.UpComingMovie
 import com.tentwenty.assignment.movies_list.domain.repositry.UpComingMovieRepository
 import kotlinx.coroutines.flow.Flow

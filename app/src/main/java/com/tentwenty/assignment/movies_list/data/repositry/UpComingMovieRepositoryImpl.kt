@@ -1,6 +1,6 @@
 package com.tentwenty.assignment.movies_list.data.repositry
 
-import com.tentwenty.assignment.movies_list.data.model.updoming_movie.UpComingMoviesDTO
+import com.tentwenty.assignment.movies_list.data.model.upcoming_movie.UpComingMoviesDTO
 import com.tentwenty.assignment.movies_list.data.remote.MoviesApi
 import com.tentwenty.assignment.movies_list.domain.repositry.UpComingMovieRepository
 

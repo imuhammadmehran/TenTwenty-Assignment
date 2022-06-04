@@ -1,4 +1,4 @@
-package com.tentwenty.assignment.movies_list.data.model.updoming_movie
+package com.tentwenty.assignment.movies_list.data.model.upcoming_movie
 
 import com.tentwenty.assignment.movies_list.domain.model.UpComingMovie
 
