@@ -28,5 +28,10 @@
 
     <!--Search-->
     <string name="nav_menu_search_title">Search</string>
+    <string name="genres">Genres</string>
+    <string name="action">Action</string>
+    <string name="thriller">Thriller</string>
+    <string name="fiction">Fiction</string>
+    <string name="science">Science</string>
 
 </resources>

@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_upComingMovies_to_dashboardFragment"
             app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_upComingMovies_to_movieDetailsFragment"
+            app:destination="@id/movieDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/dashboardFragment"
@@ -29,6 +32,18 @@
         android:name="com.tentwenty.assignment.movies_list.presentation.more.MoreFragment"
         android:label="@string/more_fragment_title"
         tools:layout="@layout/fragment_more" />
+
+
+    <fragment
+        android:id="@+id/movieDetailsFragment"
+        android:name="com.tentwenty.assignment.movies_list.presentation.watch.movie_details.MovieDetailsFragment"
+        android:label="@string/watch_bottom_nav_title">
+        <argument
+            android:name="movieId"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
 
 
 </navigation>

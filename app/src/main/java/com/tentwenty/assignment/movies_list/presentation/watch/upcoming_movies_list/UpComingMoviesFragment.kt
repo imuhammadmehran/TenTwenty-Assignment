@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.coroutineScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tentwenty.assignment.R
 import com.tentwenty.assignment.databinding.FragmentUpComingMoviesBinding
@@ -105,12 +106,7 @@ class UpComingMoviesFragment :
 
 
         lifecycle.coroutineScope.launchWhenCreated {
-
-            Log.d(TAG, "onViewCreated: current thread --> ${Thread.currentThread().name}")
-
             viewModel.upComingMovies.collect {
-                Log.d(TAG, "Collecting movies list flow...")
-
                 if (it.isLoading) {
                     binding.tvNoUpcomingVideoFound.visibility = View.GONE
                     binding.progressUpcomingMovie.visibility = View.VISIBLE
@@ -120,11 +116,7 @@ class UpComingMoviesFragment :
                     binding.progressUpcomingMovie.visibility = View.GONE
                     Toast.makeText(requireContext(), it.error, Toast.LENGTH_SHORT).show()
                 }
-
-                Log.d(TAG, "data: ${it.data}")
-
                 it.data?.let {
-
                     if (it.isEmpty()) {
                         binding.tvNoUpcomingVideoFound.visibility = View.VISIBLE
                     }
@@ -138,7 +130,11 @@ class UpComingMoviesFragment :
 
 
         upComingMoviesAdapter.itemClickListener {
-            Log.d(TAG, "item Clicked: $it")
+            findNavController().navigate(
+                UpComingMoviesFragmentDirections.actionUpComingMoviesToMovieDetailsFragment(
+                    it.id.toString()
+                )
+            )
         }
 
     }

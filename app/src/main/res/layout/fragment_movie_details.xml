@@ -2,7 +2,8 @@
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".movies_list.presentation.watch.movie_details.MovieDetailsFragment">
 
     <data>
 
@@ -12,14 +13,16 @@
 
     </data>
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
         <ImageView
             android:id="@+id/imageViewPoster"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="350dp"
             android:contentDescription="@string/more_fragment_title"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
@@ -85,18 +88,41 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:text="Genres"
+            android:layout_marginTop="16dp"
+            android:text="@string/genres"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonWatchTrailer" />
+            app:layout_constraintTop_toBottomOf="@+id/imageViewPoster" />
 
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/chipGroup"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewChipTitle">
+
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/action" />
+
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/thriller" />
+
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/science" />
+
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fiction" />
+
 
         </com.google.android.material.chip.ChipGroup>
 
@@ -117,5 +143,4 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>

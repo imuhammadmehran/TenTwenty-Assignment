@@ -1,5 +1,6 @@
 package com.tentwenty.assignment.movies_list.presentation.watch.upcoming_movies_list
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -14,6 +15,7 @@ class UpComingMoviesAdapter : RecyclerView.Adapter<UpComingMoviesAdapter.MyViewH
 
     var list = mutableListOf<UpComingMovie>()
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setContentList(list: MutableList<UpComingMovie>) {
         this.list = list
         notifyDataSetChanged()
@@ -39,6 +41,12 @@ class UpComingMoviesAdapter : RecyclerView.Adapter<UpComingMoviesAdapter.MyViewH
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
         val upComingMovie = this.list[position]
+
+
+       /* holder.viewHolder.upComingMovie = this.list[position].apply {
+            this.poster_path = "${Constants.IMAGE_URL}${this.poster_path}"
+        }*/
+
         holder.viewHolder.upComingMovie = UpComingMovie(
             upComingMovie.id,
             upComingMovie.title,
