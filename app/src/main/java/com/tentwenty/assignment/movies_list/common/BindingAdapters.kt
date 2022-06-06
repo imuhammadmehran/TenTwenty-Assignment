@@ -8,6 +8,8 @@ import com.tentwenty.assignment.R
 
 @BindingAdapter("urlToImage")
 fun urlToImage(view: ImageView, s: String?) {
-    val options = RequestOptions.placeholderOf(R.drawable.loading).error(R.drawable.error)
-    Glide.with(view).setDefaultRequestOptions(options).load(s ?: "").into(view)
+//    val options = RequestOptions.placeholderOf(R.drawable.loading).error(R.drawable.error)
+//    Glide.with(view).setDefaultRequestOptions(options).load(s ?: "").into(view)
+    Glide.with(view).load(s ?: "").into(view)
+
 }

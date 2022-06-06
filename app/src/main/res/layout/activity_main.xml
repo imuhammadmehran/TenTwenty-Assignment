@@ -18,13 +18,11 @@
             android:id="@+id/toolBar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@color/design_default_color_primary"
-
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+            app:titleTextAppearance="@style/toolBarTitle"
+            app:titleTextColor="@color/custom_color_1" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerView"
@@ -43,6 +41,10 @@
             android:id="@+id/main_bottom_navigation"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:theme="@style/bottomNavigationTitleStyle"
+            android:background="@drawable/bottom_navigation_view_bg"
+            app:itemIconTint="@drawable/bottom_nav_item_color"
+            app:itemTextColor="@drawable/bottom_nav_item_color"
             app:labelVisibilityMode="labeled"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

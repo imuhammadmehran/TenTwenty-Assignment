@@ -12,11 +12,11 @@ import javax.inject.Inject
 
 class GetTrailerVideoUseCase @Inject constructor(private val getTrailerVideoRepository: TrailerVideoRepository) {
 
-    operator fun invoke(movieId: String, apiKey: String): Flow<Resource<List<TrailerVideo>>> =
+    operator fun invoke(movieId: String): Flow<Resource<List<TrailerVideo>>> =
         flow {
             try {
                 emit(Resource.Loading())
-                val data = getTrailerVideoRepository.getTrailerVideo(movieId, apiKey)
+                val data = getTrailerVideoRepository.getTrailerVideo(movieId)
                 val domainData = data.trailerVideoDTOS.map {
                     it.toDomainTrailerVideo()
                 }

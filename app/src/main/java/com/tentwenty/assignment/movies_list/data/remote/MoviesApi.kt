@@ -5,23 +5,20 @@ import com.tentwenty.assignment.movies_list.data.model.trailer_video.TrailerVide
 import com.tentwenty.assignment.movies_list.data.model.upcoming_movie.UpComingMoviesDTO
 import retrofit2.http.GET
 import retrofit2.http.Path
-import retrofit2.http.Query
 
 interface MoviesApi {
 
-    @GET("/movie/upcoming/")
-    suspend fun getUpComingMoviesList(@Query("api_key") apiKey: String): UpComingMoviesDTO
+    @GET("movie/upcoming/")
+    suspend fun getUpComingMoviesList(): UpComingMoviesDTO
 
-    @GET("/movie/{movie_id}")
+    @GET("movie/{movie_id}")
     suspend fun getMovieDetails(
-        @Path("movie_id") movieId: String,
-        @Query("api_key") apiKey: String
+        @Path("movie_id") movieId: String
     ): MovieDetailsDTO
 
     @GET("movie/{movie_id}/videos")
     suspend fun getTrailerVideo(
-        @Path("movie_id") movieId: String,
-        @Query("api_key") apiKey: String
+        @Path("movie_id") movieId: String
     ): TrailerVideosDTO
 
 }

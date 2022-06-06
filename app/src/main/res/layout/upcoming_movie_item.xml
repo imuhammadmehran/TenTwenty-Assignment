@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="upComingMovie"
+            type="com.tentwenty.assignment.movies_list.domain.model.UpComingMovie" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/imageViewPoster"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/round_corner"
+            android:clipToOutline="true"
+            android:contentDescription="@string/upcoming_movie_banner_title"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:urlToImage="@{upComingMovie.poster_path}"
+            tools:src="@drawable/demo_banner"
+            tools:targetApi="s" />
+
+
+        <TextView
+            style="@style/bottomNavigationTitleStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:text="@{upComingMovie.title}"
+            android:theme="@style/upComingMovieItemTitleStyle"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewPoster"
+            app:layout_constraintStart_toStartOf="@+id/imageViewPoster"
+            tools:text="Free Guy" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

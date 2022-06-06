@@ -5,7 +5,7 @@ import com.tentwenty.assignment.movies_list.data.remote.MoviesApi
 import com.tentwenty.assignment.movies_list.domain.repositry.MovieDetailsRepository
 
 class MovieDetaisRepositoryImpl(private val moviesApi: MoviesApi) : MovieDetailsRepository {
-    override suspend fun getMovieDetails(movieId: String, apiKey: String): MovieDetailsDTO {
-        return moviesApi.getMovieDetails(movieId, apiKey)
+    override suspend fun getMovieDetails(movieId: String): MovieDetailsDTO {
+        return moviesApi.getMovieDetails(movieId)
     }
 }

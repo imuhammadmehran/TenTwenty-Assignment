@@ -5,6 +5,10 @@
     <!--Watch-->
     <string name="upcoming_movies_fragment_title">Watch</string>
     <string name="watch_bottom_nav_title">Watch</string>
+    <string name="upcoming_movie_banner_title">Upcoming movie banner</string>
+    <string name="no_video_found">No upcoming video found</string>
+    <string name="get_tickets">Get Tickets</string>
+    <string name="watch_trailer">Watch Trailer</string>
 
 
     <!--Dashboard-->

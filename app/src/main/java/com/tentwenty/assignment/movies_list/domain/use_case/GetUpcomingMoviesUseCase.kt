@@ -13,14 +13,14 @@ import javax.inject.Inject
 class GetUpcomingMoviesUseCase @Inject constructor(private val upComingMovieRepository: UpComingMovieRepository) {
 
 
-    operator fun invoke(apiKey: String): Flow<Resource<List<UpComingMovie>>> = flow {
+    operator fun invoke(): Flow<Resource<List<UpComingMovie>>> = flow {
         try {
             emit(Resource.Loading())
-            val data = upComingMovieRepository.getUpComingMoviesList(apiKey)
+            val data = upComingMovieRepository.getUpComingMoviesList()
             val domainData =
-                data.upComingMovieDTOS.map {
+                data.results?.map {
                     it.toDomainUpComingMovie()
-                }
+                } ?: emptyList()
             emit(Resource.Success(data = domainData))
         } catch (e: HttpException) {
             emit(Resource.Error(message = e.localizedMessage ?: "An Unknown error occurred"))

@@ -12,11 +12,11 @@ import javax.inject.Inject
 
 class GetMoviesDetailsUseCase @Inject constructor(private val movieDetailsRepository: MovieDetailsRepository) {
 
-    operator fun invoke(movieId: String, apiKey: String): Flow<Resource<MovieDetails>> =
+    operator fun invoke(movieId: String): Flow<Resource<MovieDetails>> =
         flow {
             try {
                 emit(Resource.Loading())
-                val data = movieDetailsRepository.getMovieDetails(movieId, apiKey)
+                val data = movieDetailsRepository.getMovieDetails(movieId)
                 val domainData = data.toDomainMovieDetails()
                 emit(Resource.Success(data = domainData))
             } catch (e: HttpException) {

@@ -4,7 +4,6 @@ import com.tentwenty.assignment.movies_list.data.model.movie_details.MovieDetail
 
 interface MovieDetailsRepository {
     suspend fun getMovieDetails(
-        movieId: String,
-        apiKey: String
+        movieId: String
     ): MovieDetailsDTO
 }
